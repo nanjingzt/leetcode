@@ -13,6 +13,8 @@ var longestPalindrome  = function (s) {
             cs = j;
         }
     }
-    var result = t.slice(cs - e + 1, cs + e).replace(/#/g, "").replace(/~/g, ""); 
+    var start = cs - e + 1;
+    var end = cs + e;
+    var result = t.slice(start,end).replace(/#/g, "").replace(/~/g, ""); 
     return result;
 };
