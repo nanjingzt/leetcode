@@ -6,15 +6,24 @@
 最多只需遍历一次序列，将元素及其索引加入map中，在遍历的过程中进行对应差值的查找，如果找到了就结束遍历，这样时间复杂度最多为 O(N)
 */
 
-	var twoSum = function(nums, target) {
-		    var exist = [];
-		    for(var i = 0; i < nums.length; i++){
-		       var tmp = target - nums[i];
-		       if (exist[tmp] !== undefined){
-		           return [exist[tmp], i];
-		       }
-		       exist[nums[i]] = i
-		    }
-		};
-		var result = sum([3,2,4],6);
-		console.log(result);
+var twoSum = function(nums, target) {
+	    var exist = [];
+	    for(var i = 0; i < nums.length; i++){
+	       var tmp = target - nums[i];
+	       if (exist[tmp] !== undefined){
+		   return [exist[tmp], i];
+	       }
+	       exist[nums[i]] = i
+	    }
+	};
+
+e.g:
+var result = sum([3,2,4,1,11,20,10],13);
+console.log(result);
+
+i=0,tmp=10,exist[3]=0;
+i=1,tmp=11,exist[2]=1;
+i=2,tmp= 9,exist[4]=2;
+i=3,tmp=12,exist[1]=3;
+
+i=4,tmp=2,exist[2]存在，所以返回[exist[tmp], i]，即[1,4]
