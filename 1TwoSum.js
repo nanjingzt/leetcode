@@ -6,7 +6,7 @@
 最多只需遍历一次序列，将元素及其索引加入map中，在遍历的过程中进行对应差值的查找，如果找到了就结束遍历，这样时间复杂度最多为 O(N)
 */
 
-		function sum(nums, target) {
+	var twoSum = function(nums, target) {
 		    var exist = [];
 		    for(var i = 0; i < nums.length; i++){
 		       var tmp = target - nums[i];
